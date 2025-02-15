@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css'%}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+         
+        <div class="logo-container"> 
+            <img src="{%static 'img/logo.png'%}" class="logo">
+        </div>
+
+        <h1>Bem-vindo(a)</h1>
+       <div class="form">
+      
+               <div class="container-Login">
+                   <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
+                   <span>Login</span>
+               </div>
+           <form>
+               <div>
+                   <label htmlFor="" class="label-padrao">Usuário:</label>
+                   <input type="text" class="input-usuario"/>
+               </div>
+               <div>
+                   <label htmlFor="" class="label-padrao">Senha:</label>
+                   <input type="text" class="input-senha"/>
+               </div>
+               <button type="button">Entrar</button>
+               <div class="cadastro">
+                <a href="{% url 'cadastro' %}">Cadastre-se</a>
+
+               </div>
+           </form>
+       </div>
+     </div>
+</body>
+</html>

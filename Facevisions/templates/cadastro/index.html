@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css'%}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="logo-container"> 
+            <img src="{%static 'img/logo.png'%}" class="logo">
+        </div>
+
+       <h1>Crie sua conta no sistema</h1>
+       <div class="form">
+      
+               <div class="container-Login">
+                   <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
+                   <span>Cadastro do aluno</span>
+               </div>
+           <form>
+               <div>
+                   <label htmlFor="" class="label-padrao">Nome:</label>
+                   <input type="text" class="input-usuario"/>
+               </div>
+               <div>
+                    <label htmlFor="" class="label-padrao">Email:</label>
+                    <input type="text" class="input-usuario"/>
+                </div>
+               <div>
+                   <label htmlFor="" class="label-padrao">Crie sua Senha:</label>
+                   <input type="text"  class="input-usuario"/>
+               </div>
+
+               <div>
+                    <label htmlFor="" class="label-padrao">Selecione seu curso:</label>
+                
+                    <div class="curso">
+                     
+                            <form action="">
+                                <label><input type="radio" name="opcao" value="1"> Administração</label>
+                                <label><input type="radio" name="opcao" value="2">Bar e Restaurante</label>
+                            </form>
+        
+                    </div>
+                    
+                </div>
+
+               <button type="button">Criar</button>
+           </form>
+       </div>
+     </div>
+</body>
+</html>
