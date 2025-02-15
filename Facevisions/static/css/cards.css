@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+  body {
+    background-image: url("/static/img/Fundo_login.png");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo{
+    width: 30px;
+    position: fixed; 
+    top: 20px; 
+    right: 20px; 
+    width: 80px; 
+    height: auto; 
+    z-index: 1000; 
+    
+    
+  }
+
+
+
+  
+  .form{
+    background-color: #C6C5C55E;
+    width: 319px;
+    height: 457px;
+    border-radius: 20px;
+    
+    
+  }
+  
+  .container-Login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    
+    
+    
+  }
+  
+  h1{
+    color: white;
+    font-size:30px;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  
+  
+  .imgLogin{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+  }
+  
+  form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .label-padrao{
+    width: 400px;
+    padding: 25px;
+    font-size: 22px;
+    line-height: 27.58px;
+    color: white;
+    
+  }
+  
+  .input-usuario{
+    width: 275px;
+    height: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    background-color: #C6C5C5A6;
+    border: 1px solid #C6C5C5A6;
+    
+  }
+
+  .input-senha{
+    width: 275px;
+    height: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    background-color: #C6C5C5A6;
+    border: 1px solid #C6C5C5A6;
+    
+  }
+  
+  button{
+    width: 175px;
+    border-radius: 20px;
+    padding: 15px 40px;
+  
+    background-color: #4626FC54;
+    color: white;
+    border: 1px solid #4626FC54;
+    font-size: 20px;
+    display: block;
+    margin: 20px auto;
+  } 
+
+  .cadastro{
+    text-align: center;
+    padding-top: 10px;
+    
+  }
+
+  a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  .curso{
+    margin-left: 25px;
+    padding: 10px;
+  }
+
+  label{
+    color: white;
+    font-size: 18px;
+  }
+
+  
