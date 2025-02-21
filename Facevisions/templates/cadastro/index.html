@@ -21,35 +21,31 @@
                    <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
                    <span>Cadastro do aluno</span>
                </div>
-           <form>
+           <form method="post" action="{%url 'salvar_dados'%}">
+                {%csrf_token%}
                <div>
-                   <label htmlFor="" class="label-padrao">Nome:</label>
-                   <input type="text" class="input-usuario"/>
+                   <label for="nome" class="label-padrao">Nome:</label>
+                   <input type="text" class="input-usuario" id="nome" name="nome"/>
                </div>
                <div>
-                    <label htmlFor="" class="label-padrao">Email:</label>
-                    <input type="text" class="input-usuario"/>
+                    <label for="email" class="label-padrao">Email:</label>
+                    <input type="text" class="input-usuario" id="email" name="email"/>
                 </div>
                <div>
-                   <label htmlFor="" class="label-padrao">Crie sua Senha:</label>
-                   <input type="text"  class="input-usuario"/>
+                   <label for="senha" class="label-padrao">Crie sua Senha:</label>
+                   <input type="text"  class="input-usuario" id="senha" name="senha"/>
                </div>
 
                <div>
-                    <label htmlFor="" class="label-padrao">Selecione seu curso:</label>
+                    <label for="value" class="label-padrao">Selecione seu curso:</label>
                 
                     <div class="curso">
-                     
-                            <form action="">
-                                <label><input type="radio" name="opcao" value="1"> Administração</label>
-                                <label><input type="radio" name="opcao" value="2">Bar e Restaurante</label>
-                            </form>
-        
+                        <label><input type="radio" name="curso" value="Administração"> Administração</label>
+                        <label><input type="radio" name="curso" value="Bae e Restaurante">Bar e Restaurante</label>
                     </div>
-                    
                 </div>
 
-               <button type="button">Criar</button>
+               <button type="submit" >Criar</button>
            </form>
        </div>
      </div>
