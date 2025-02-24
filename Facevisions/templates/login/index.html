@@ -16,21 +16,22 @@
 
         <h1>Bem-vindo(a)</h1>
        <div class="form">
-      
-               <div class="container-Login">
-                   <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
-                   <span>Login</span>
-               </div>
-           <form>
+
+            <div class="container-Login">
+                <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
+                <span>Login</span>
+            </div>
+            <form method="POST" action="{% url 'login' %}">
+               {% csrf_token %}
                <div>
-                   <label htmlFor="" class="label-padrao">Usuário:</label>
-                   <input type="text" class="input-usuario"/>
+                   <label for="email" class="label-padrao">Email:</label>
+                   <input type="text" class="input-usuario" name ="email"/>
                </div>
                <div>
-                   <label htmlFor="" class="label-padrao">Senha:</label>
-                   <input type="text" class="input-senha"/>
+                   <label for="senha" class="label-padrao">Senha:</label>
+                   <input type="password" class="input-senha" name = "senha"/>
                </div>
-               <button type="button">Entrar</button>
+               <button type="submit">Entrar</button>
                <div class="cadastro">
                 <a href="{% url 'cadastro' %}">Cadastre-se</a>
 
@@ -39,4 +40,4 @@
        </div>
      </div>
 </body>
-</html>
+</html> 
