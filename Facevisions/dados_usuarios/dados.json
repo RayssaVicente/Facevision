@@ -1,20 +1,3 @@
 [
-    {
-        "nome": "luan",
-        "email": "luan1234@gmail.com",
-        "senha": "pbkdf2_sha256$870000$CAXTuW4imvLXW6Fm8G65g3$ztEttYsecYogWi5A+bvA19Bnbcpv6Ckeb8Ugh0Q/R5A=",
-        "curso": "Administração"
-    },
-    {
-        "nome": "maria luiza",
-        "email": "marialuiza@gmail.com",
-        "senha": "pbkdf2_sha256$870000$7pbQYhLHnxAakPUNK1dz3T$KV3Mni5ZA1oDslngxZbo7YO2AjEFDFvSt9GExlimP9w=",
-        "curso": "Administração"
-    },
-    {
-        "nome": "luan12",
-        "email": "luan12@gmail.com",
-        "senha": "pbkdf2_sha256$870000$gco8EafRj9sDLPQUAH2hJH$Ok9I3dHq2zTiZLmv0HwRdqVADaUnynT3MfLveXtcGzM=",
-        "curso": "Administração"
-    }
+
 ]
