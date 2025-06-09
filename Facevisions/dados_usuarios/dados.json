@@ -1,3 +1,20 @@
 [
-
+    {
+        "nome": "rayssa",
+        "email": "rayssa@gmail.com",
+        "senha": "pbkdf2_sha256$870000$BDABQurhA4ki4P2WgylZ3r$iMTpcil8gySJDz6zMqlsxkIXmUL4TByArGsnKYHYZm0=",
+        "curso": "Administração"
+    },
+    {
+        "nome": "Rayssa",
+        "email": "luiza@gmail.com",
+        "senha": "pbkdf2_sha256$870000$0jahH3FiBri74Xm3XXpugE$jnBwUeOYLbHvAvNo6dMYGj3HbONm2/tpJO3s+zBUimw=",
+        "curso": "Bar e Restaurante"
+    },
+    {
+        "nome": "Maria Luiza",
+        "email": "linda@gmail.com",
+        "senha": "pbkdf2_sha256$870000$jpDtd1wnR62kD2cgBhaikX$BPf6cB+vsPrIgLm58+rSwPpPucVqThPP+ojCH7bqueo=",
+        "curso": "Administração"
+    }
 ]

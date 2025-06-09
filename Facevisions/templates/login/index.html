@@ -1,43 +1,129 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/cards.css'%}">
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+        background-image: url("{% static 'img/Fundo_login.png' %}");
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-container {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 400px;
+        width: 100%;
+        margin-top: 20px;
+        color: white;
+    }
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+        border-radius: 15px;
+    }
+    .logo {
+        width: 60px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .modal-header {
+        background-color: #ff4757;
+        color: white;
+    }
+    .modal-body {
+        color: #333;
+    }
+    .btn-login {
+        background-color: #573bff;
+        color: white;
+        border-radius: 20px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    .btn-login:hover {
+        background-color: #412cff;
+    }
+    a.cadastro-link {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-top: 15px;
+    }
+    a.cadastro-link:hover {
+        text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-         
-        <div class="logo-container"> 
-            <img src="{%static 'img/logo.png'%}" class="logo">
+
+<a href="{% url 'login' %}">
+    <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+</a>
+
+<h2 class="mb-4 mt-5 text-white">Bem-vindo(a)</h2>
+
+<div class="form-container text-white shadow">
+    <div class="text-center mb-3">
+        <img src="{% static 'img/foto-usuario.png' %}" alt="Usuário" class="rounded-circle" width="60">
+        <p class="fw-bold mt-2">Login</p>
+    </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha" name="senha" required>
         </div>
 
-        <h1>Bem-vindo(a)</h1>
-       <div class="form">
+        <button type="submit" class="btn btn-login w-100 mt-4">Entrar</button>
+    </form>
 
-            <div class="container-Login">
-                <div class="imgLogin"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></div>
-                <span>Login</span>
-            </div>
-            <form method="POST" action="{% url 'login' %}">
-               {% csrf_token %}
-               <div>
-                   <label for="email" class="label-padrao">Email:</label>
-                   <input type="text" class="input-usuario" name ="email"/>
-               </div>
-               <div>
-                   <label for="senha" class="label-padrao">Senha:</label>
-                   <input type="password" class="input-senha" name = "senha"/>
-               </div>
-               <button type="submit">Entrar</button>
-               <div class="cadastro">
-                <a href="{% url 'cadastro' %}">Cadastre-se</a>
+    <a href="/cadastro/" class="cadastro-link text-center">Cadastre-se</a>
+</div>
 
-               </div>
-           </form>
-       </div>
-     </div>
+<!-- Modal de erro -->
+{% if erro %}
+<div class="modal fade" id="erroModal" tabindex="-1" aria-labelledby="erroModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content erro">
+      <div class="modal-header">
+        <h5 class="modal-title" id="erroModalLabel">Erro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+        <p>{{ erro }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% if erro %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var erroModal = new bootstrap.Modal(document.getElementById('erroModal'));
+    erroModal.show();
+  });
+</script>
+{% endif %}
+
 </body>
-</html> 
+</html>

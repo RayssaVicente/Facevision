@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas avaliações</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dados.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/boletin.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome/css/all.css'%}">
+    
+</head>
+<body>
+
+    <div class="sidebar2">
+       
+        <nav>
+            <button class="abrirBotao" onclick="botaoMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="sidebarMenu" id="menu">
+                <h2 class="titulo">Portal Guedes</h2>
+                <button class="abrirBotao2" onclick="botaoMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href=""><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+                
+                <div id="trigger-icon" ><a href="#"><i class="fa-solid fa-users-rectangle" ></i></a></div>
+            
+                <div class="hidden-options" id="options">
+                    <div class="icon-container">
+                        <button class="icon"> <a href="{% url 'boletin' %}" >Boletin</a></button>
+                        <button class="icon"> <a href="{% url 'dadosUsuario' %}">Dados do aluno</a></button>
+                        <button class="icon"> <a href="">Estágio</a></button>
+                        <button class="icon"> <a href="">TCC</a></button>
+                        <button class="icon"> <a href="#">Minhas avaliações</a></button>
+                        <button class="icon"> <a href="{% url 'horarios' %}">Horários de Aulas</a></button>
+
+                    </div>
+
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                    
+                </div>
+                  
+            </div>
+
+            <a href="{% url 'dadosUsuario' %}"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+            <a href="{% url 'login' %}"><i class="fas fa-home"></i></a>
+            <a href="#"><i class="fa-solid fa-users-rectangle"></i></a>
+            <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+        </nav>
+    </div>
+
+   
+
+    <div class="content">
+
+        <div class="logo">
+            <img src="{%static 'img/logo.png'%}" alt="">
+        </div>
+
+       <div class="content">
+           <h2 class="titulo">Selecione a área que deseja ver as avaliações</h2>
+            <select id="opcoes" name="opcoes">
+                <option value="0">Selecione uma das áreas</option>
+                <option value="1">Linguagem</option>
+                <option value="2">Humanas</option>
+                <option value="3">Exatas e Natureza</option>
+                <option value="4">Base Técnica</option>
+            </select>
+
+           <!-- Tabela Linguagem -->
+        <div id="tabelaLinguagem" style="display: none;">
+            <h2 class="titulo-tabela">Avaliações - Linguagem</h2>
+            <table border="1">
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Avaliação</th>
+                </tr>
+                <tr>
+                    <td>Português</td>
+                    <td>12/05 - Primeira Avaliação</td>
+                </tr>
+                <tr>
+                    <td>Inglês</td>
+                    <td>15/04 - Primeira avaliação</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Tabela Humanas -->
+        <div id="tabelaHumanas" style="display: none;">
+            <h2 class="titulo-tabela">Avaliações - Humanas</h2>
+            <table border="1">
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Avaliação</th>
+                </tr>
+                <tr>
+                    <td>Geografia</td>
+                    <td>12/05 - Primeira Avaliação</td>
+                </tr>
+                <tr>
+                    <td>História</td>
+                    <td>15/04 - Primeira avaliação</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Tabela Exatas e Natureza -->
+        <div id="tabelaExatas" style="display: none;">
+            <h2 class="titulo-tabela">Avaliações - Exatas e Natureza</h2>
+            <table border="1">
+
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Avaliação</th>
+                </tr>
+                <tr>
+                    <td>Matemática</td>
+                    <td>12/05 - Primeira Avaliação</td>
+                </tr>
+                <tr>
+                    <td>Física</td>
+                    <td>15/04 - Primeira avaliação</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Tabela Base Técnica -->
+        <div id="tabelaTecnica" style="display: none;">
+            <h2 class="titulo-tabela">Avaliações - Base Técnica</h2>
+            <table border="1">
+
+
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Avaliação</th>
+                </tr>
+                <tr>
+                    <td>Matemática Financeira</td>
+                    <td>12/05 - Primeira Avaliação</td>
+                </tr>
+                <tr>
+                    <td>TCC</td>
+                    <td>15/04 - Primeira avaliação</td>
+                </tr>
+            </table>
+        </div>
+
+
+        
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

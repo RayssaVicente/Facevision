@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do aluno</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dados.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome/css/all.css'%}">
+   
+</head>
+<body>
+
+    <div class="sidebar2">
+       
+        <nav>
+            <button class="abrirBotao" onclick="botaoMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="sidebarMenu" id="menu">
+                <h2 class="titulo">Portal Guedes</h2>
+                <button class="abrirBotao2" onclick="botaoMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href=""><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+                
+                <div id="trigger-icon" ><a href="#"><i class="fa-solid fa-users-rectangle" ></i></a></div>
+            
+                <div class="hidden-options" id="options">
+                    <div class="icon-container">
+                        <button class="icon"> <a href="{% url 'boletin' %}" >Boletin</a></button>
+                        <button class="icon"> <a href="#">Dados do aluno</a></button>
+                        <button class="icon"> <a href="">Estágio</a></button>
+                        <button class="icon"> <a href="">TCC</a></button>
+                        <button class="icon"> <a href="{% url 'minhasAvaliacoes' %}">Minhas avaliações</a></button>
+                        <button class="icon"> <a href="{% url 'horarios' %}">Horários de Aulas</a></button>
+                        
+
+                    </div>
+
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                    
+                </div>
+                  
+            </div>
+
+            <a href="#"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+            <a href="{% url 'login' %}"><i class="fas fa-home"></i></a>
+            <a href="#"><i class="fa-solid fa-users-rectangle"></i></a>
+            <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+        </nav>
+    </div>
+
+   
+
+    <div class="content">
+        <div class="botao">
+            <button class="botaoEstilo">Editar</button>
+            <button class="botaoEstilo">Minha Conta</button>
+        </div>
+
+        <div class="logo">
+            <img src="{%static 'img/logo.png'%}" alt="">
+        </div>
+        <div >
+            <h2 class="titulo-nome">Maria Luiza Camilo do Nascimento</h2>
+            <p class="matriculado">Matriculado</p>
+            <div class="dados-usuario">
+                
+                
+                <img src="{%static 'img/foto-usuario.png'%}" alt="" class="dados-usuario-img">
+                <div>
+                    
+                    <span>Nome:</span>
+                    <h3>Maria Luiza Camilo do Nascimento</h3>
+                    <hr>
+
+                    <span>Ingresso:</span>
+                    <h3>2024/1</h3>
+                    <hr>
+
+                    <span>Curso:</span>
+                    <h3>Administração</h3>
+                    <hr>
+
+
+                    <span>Periodo:</span>
+                    <h3>3° ano Ensino Médio</h3>
+                    <hr>
+                </div> 
+            </div>
+           
+        </div>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

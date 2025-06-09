@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horarios</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dados.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome/css/all.css'%}">
+    
+</head>
+<body>
+
+    <div class="sidebar2">
+       
+        <nav>
+            <button class="abrirBotao" onclick="botaoMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <div class="sidebarMenu" id="menu">
+                <h2 class="titulo">Portal Guedes</h2>
+                <button class="abrirBotao2" onclick="botaoMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href=""><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+                
+                <div id="trigger-icon" ><a href="#"><i class="fa-solid fa-users-rectangle" ></i></a></div>
+            
+                <div class="hidden-options" id="options">
+                    <div class="icon-container">
+                        <button class="icon"> <a href="{% url 'boletin' %}">Boletim</a></button>
+                        <button class="icon"> <a href="{% url 'dadosUsuario' %}">Dados do aluno</a></button>
+                        <button class="icon"> <a href="">Estágio</a></button>
+                        <button class="icon"> <a href="">TCC</a></button>
+                        <button class="icon"> <a href="{% url 'minhasAvaliacoes' %}">Minhas avaliações</a></button>
+                        <button class="icon"> <a href="{% url 'horarios' %}">Horários de Aulas</a></button>
+                        
+
+                    </div>
+
+                    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                    
+                </div>
+                  
+            </div>
+
+            <a href="{% url 'dadosUsuario' %}"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
+            <a href="#"><i class="fas fa-home"></i></a>
+            <a href="#"><i class="fa-solid fa-users-rectangle"></i></a>
+            <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <div class="horario">
+            <h3 class="titulo">Horarios das Aulas</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                         <th>Seg</th> <th>Ter</th> <th>Qua</th> <th>Qui</th> <th>Sex</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Geografia</td> <td>Matemática</td> <td>Sociologia</td> <td>Português</td> <td>Química</td></tr>
+
+                    <tr><td>Matemática</td> <td>Filosofia</td> <td>Historia</td> <td>Historia</td> <td>Português</td> </tr>
+
+                    <tr><td>Historia</td> <td>Sociologia</td> <td>Biologia</td> <td>Geografia</td> <td>Química</td> </tr>
+
+                    <tr><td>Física</td> <td>Química</td> <td>Física</td> <td>Biologia</td> <td>Biologia</td></tr>
+
+                    <tr><td>Português</td> <td>Biologia</td> <td>Historia</td> <td>Física</td> <td>Física</td></tr>
+
+                    <tr><td>Português</td> <td>Biologia</td> <td>Historia</td> <td>Matemática</td> <td>Matemática</td> </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+
+</body>
+</html>

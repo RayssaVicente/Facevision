@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Facevision',
 ]
 
 MIDDLEWARE = [
@@ -80,17 +79,11 @@ WSGI_APPLICATION = 'Facevisions.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'guedes_dados',  # Nome do seu banco de dados
-        'USER': 'root',  # Usuário do MySQL
-        'PASSWORD': 'malu2309',  # Senha do MySQL
-        'HOST': 'localhost',  # Ou IP do servidor MySQL
-        'PORT': '3306',  # Porta padrão do MySQL
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': BASE_DIR / 'db.sqlite3',
+         }
+     
 }
 
 
