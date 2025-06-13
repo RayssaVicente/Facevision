@@ -45,9 +45,9 @@ Para configurar e rodar este projeto em seu ambiente local, siga os passos abaix
 
     bash
     python -m venv venv
-    # No Windows:
+     No Windows:
     .\venv\Scripts\activate
-    # No macOS/Linux:
+     No macOS/Linux:
     source venv/bin/activate
     
 
