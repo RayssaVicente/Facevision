@@ -1,0 +1,58 @@
+[
+    {
+        "aluno_email": "lua@gamil.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "avaliação semanal",
+        "nota": 10.0,
+        "data": "20/12/2025"
+    },
+    {
+        "aluno_email": "luiza@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "avaliação semanal",
+        "nota": 10.0,
+        "data": "18/12/2025"
+    },
+    {
+        "aluno_email": "luiza@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "Avaliação semanal",
+        "nota": 10.0,
+        "data": "10/12/2025"
+    },
+    {
+        "aluno_email": "luiza@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "Avaliação Mensal",
+        "nota": 8.0,
+        "data": "25/12/2025"
+    },
+    {
+        "aluno_email": "luiza@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "prova 2",
+        "nota": 10.0,
+        "data": "20/12/2025"
+    },
+    {
+        "aluno_email": "renata@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "Avaliação semanal",
+        "nota": 10.0,
+        "data": "21/12/2025"
+    },
+    {
+        "aluno_email": "renata@gmail.com",
+        "professor_email": "professor@escola.com",
+        "disciplina": "Português",
+        "avaliacao": "Avaliação mensal",
+        "nota": 5.5,
+        "data": "21/12/2025"
+    }
+]
