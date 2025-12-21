@@ -1,0 +1,18 @@
+[
+    {
+        "disciplina": "Matemática",
+        "nome_avaliacao": "Prova Bimestral A1",
+        "data": "2024-05-15",
+        "turma": 1,
+        "tipo": "Escrita",
+        "area": "Exatas"
+    },
+    {
+        "disciplina": "História",
+        "nome_avaliacao": "Trabalho em Grupo",
+        "data": "2024-05-20",
+        "turma": 1,
+        "tipo": "Trabalho",
+        "area": "Humanas"
+    }
+]
