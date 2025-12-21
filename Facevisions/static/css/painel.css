@@ -1,0 +1,279 @@
+/* static/css/style_painel.css */
+
+:root {
+    --sidebar-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --accent-color: #6366f1; /* Cor azul/roxo vibrante da imagem */
+    --text-main: #ffffff;
+}
+
+body {
+    background: radial-gradient(circle at top right, #4b5cc4, #2d328d 50%, #1a1c4d 100%);
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    color: var(--text-main);
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 85px;
+    background: var(--sidebar-bg);
+    backdrop-filter: blur(15px);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar-item {
+    color: rgba(255,255,255,0.5);
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    color: var(--text-main);
+}
+
+.sidebar-item span {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+/* Conteúdo */
+.main-content {
+    margin-left: 85px;
+    padding: 50px;
+    width: 100%;
+}
+
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 28px;
+    padding: 35px;
+    backdrop-filter: blur(12px);
+    height: 100%;
+}
+
+.btn-menu {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.btn-menu:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateX(5px);
+    color: white;
+}
+
+
+
+/* Forçar cor branca em absolutamente tudo no card do calendário */
+.section-card, 
+.section-card h4, 
+.section-card h5,
+.calendar-header span,
+.calendar-day {
+    color: #ffffff !important;
+}
+
+/* Reduzir drasticamente o container do calendário */
+.calendar-container {
+    max-width: 320px; /* Ajuste este valor para diminuir o conjunto todo */
+    margin: 0;
+}
+
+/* Diminuir o espaço interno do card para os quadrados aparecerem menores */
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 28px;
+    padding: 10px; /* Reduzi de 35px para 20px */
+    backdrop-filter: blur(12px);
+}
+
+/* Ajustar o cabeçalho (Dom, Seg...) */
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.calendar-header span {
+    font-weight: 600;
+    font-size: 0.65rem; /* Letras menores */
+    opacity: 0.7;
+}
+
+/* Grid de dias compacta */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px; /* Espaço entre os quadrados */
+}
+
+/* O "Quadrado" do dia */
+.calendar-day {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Arredondamento um pouco menor para combinar com o tamanho */
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.75rem; /* Números menores */
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Efeito ao passar o mouse */
+.calendar-day:hover:not(.empty) {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Dia atual - Azul Vibrante */
+.calendar-day.today {
+    background: #4f46e5; 
+    color: #ffffff !important;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(79, 70, 229, 0.5);
+    border: none;
+}
+
+/* _____________________________________________________ */
+
+/* Estilização da Tabela de Horários */
+.schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px; /* Espaço entre as "células" igual ao calendário */
+    color: white;
+}
+
+/* Cabeçalho da Tabela */
+.schedule-table th {
+    text-align: center;
+    padding: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 600;
+}
+
+/* Células da Tabela (Estilo Calendário) */
+.schedule-table td {
+    background: rgba(255, 255, 255, 0.05); /* Fundo translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px; /* Cantos arredondados */
+    padding: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Coluna de Hora (Destaque) */
+.time-col {
+    background: rgba(99, 102, 241, 0.2) !important; /* Tom azulado suave */
+    font-weight: 700;
+    color: #ffffff;
+    min-width: 100px;
+}
+
+/* Efeito Hover nas matérias */
+.schedule-table td:hover:not(.time-col, .break-row) {
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.02);
+    cursor: default;
+}
+
+/* Texto das Matérias */
+.subject {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Linha de Intervalo */
+.break-row {
+    background: rgba(255, 255, 255, 0.02) !important;
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Forçar cores brancas */
+.schedule-table td, .schedule-table th {
+    color: #ffffff !important;
+}
+
+/* ------------------------------------------------- */
+
+/* Cards de Filtro de Categoria */
+.filter-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.filter-card i {
+    font-size: 1.8rem;
+    opacity: 0.7;
+}
+
+.filter-card span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.filter-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.filter-card.active {
+    background: var(--accent-color); /* O roxo/azul do seu tema */
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.filter-card.active i, .filter-card.active span {
+    opacity: 1;
+}
+
+/* Ajuste na Tabela para Avaliações */
+.schedule-table .badge {
+    font-size: 0.75rem;
+    border: 1px solid currentColor;
+}

@@ -1,101 +1,125 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados do aluno</title>
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dados.css'%}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome/css/all.css'%}">
-   
+    <title>Painel Escolar - Schola</title>
+    <link rel="stylesheet" href="{% static 'css/dados.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
-    <div class="sidebar2">
-       
-        <nav>
-            <button class="abrirBotao" onclick="botaoMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            
-            <div class="sidebarMenu" id="menu">
-                <h2 class="titulo">Portal Guedes</h2>
-                <button class="abrirBotao2" onclick="botaoMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <a href=""><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
-                
-                <div id="trigger-icon" ><a href="#"><i class="fa-solid fa-users-rectangle" ></i></a></div>
-            
-                <div class="hidden-options" id="options">
-                    <div class="icon-container">
-                        <button class="icon"> <a href="{% url 'boletin' %}" >Boletin</a></button>
-                        <button class="icon"> <a href="#">Dados do aluno</a></button>
-                        <button class="icon"> <a href="">Estágio</a></button>
-                        <button class="icon"> <a href="">TCC</a></button>
-                        <button class="icon"> <a href="{% url 'minhasAvaliacoes' %}">Minhas avaliações</a></button>
-                        <button class="icon"> <a href="{% url 'horarios' %}">Horários de Aulas</a></button>
-                        
+<nav class="sidebar">
 
+     <a href="{% url 'principal' %}" class="sidebar-item"><i class="bi bi-grid-fill"></i><span>Início</span></a>
+
+    <a href="{% url 'dadosUsuario' %}" class="sidebar-item">
+        <i class="bi bi-person-circle"></i><span>Perfil</span>
+    </a>
+    <a href="{% url 'horarios' %}" class="sidebar-item">
+        <i class="bi bi-clock"></i><span>Horários</span> </a>
+
+    <a href="{% url 'minhasAvaliacoes' %}" class="sidebar-item "><i class="bi bi-calendar-event"></i><span>Calendario de Provas</span></a>
+ 
+    <a href="{% url 'minhas_notas' %}" class="sidebar-item">
+    <i class="bi bi-file-earmark-spreadsheet"></i><span>Boletim</span> </a>
+          <div class="mt-auto">
+            <a href="{% url 'logout' %}" class="sidebar-item"><i class="bi bi-box-arrow-left"></i><span>Sair</span></a>
+        </div>
+</nav>
+
+   <main class="main-content">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end mb-4">
+            <a href="javascript:void(0)" onclick="toggleEdit()" class="text-white text-decoration-none border border-white border-opacity-25 px-3 py-2 rounded-pill shadow-sm">
+                <i class="bi bi-pencil-square"></i> Editar Perfil
+            </a>
+        </div>
+
+        <div class="section-card profile-container p-4">
+            <div id="view-section">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center border-end border-white border-opacity-10">
+                        <div class="profile-avatar-wrapper mb-3">
+                            <i class="bi bi-person-circle display-1 text-white-50"></i>
+                        </div>
+                        <h3 class="fw-bold mb-1 text-white">{{ aluno.nome_completo }}</h3>
+                        <span class="badge rounded-pill bg-primary bg-opacity-75">Matriculado</span>
                     </div>
 
-                    <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
-                    
+                    <div class="col-md-8 ps-md-5">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <div class="info-group">
+                                    <label>Nome:</label>
+                                    <p>{{ aluno.nome_completo }}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-4">
+                                <div class="info-group">
+                                    <label>Ingresso:</label>
+                                    <p>{{ aluno.ano_ingresso}}</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 mb-4">
+                                <div class="info-group">
+                                    <label>Curso:</label>
+                                    <p>{{ aluno.curso }}</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="info-group">
+                                    <label>Período:</label>
+                                    <p>{{ aluno.serie_exibicao }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                  
             </div>
 
-            <a href="#"><img src="{%static 'img/foto-usuario.png'%}" alt="" class="imgLogin"/></a>
-            <a href="{% url 'login' %}"><i class="fas fa-home"></i></a>
-            <a href="#"><i class="fa-solid fa-users-rectangle"></i></a>
-            <a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
-        </nav>
-    </div>
+            <div id="edit-section" style="display: none;" class="edit-overlay-card">
+                <h4 class="text-white mb-4 border-bottom border-white border-opacity-10 pb-2">Editar Informações</h4>
+                <form method="post" action="{% url 'editar_perfil' %}">
+                    {% csrf_token %}
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <label class="form-label text-white-50 small">Nome Completo</label>
+                            <input type="text" name="nome" class="form-control form-control-lg bg-white text-dark border-secondary" value="{{ aluno.nome_completo }}">
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label class="form-label text-white-50 small">Curso</label>
+                            <select name="curso" class="form-select form-select-lg bg-white text-dark border-secondary">
+                                <option value="Administração" {% if aluno.curso == 'Administração' %}selected{% endif %}>Administração</option>
+                                <option value="Bar e Restaurante" {% if aluno.curso == 'Bar e Restaurante' %}selected{% endif %}>Bar e Restaurante</option>
+                            </select>
+                        </div>
 
-   
+                        <div class="col-md-6">
+                            <label class="form-label text-white-50 small">Série Atual</label>
+                            <select name="periodo" class="form-select form-select-lg bg-white text-dark border-secondary">
+                                <option value="1" {% if aluno.serie_ingresso == 1 %}selected{% endif %}>1º ano Ensino Médio</option>
+                                <option value="2" {% if aluno.serie_ingresso == 2 %}selected{% endif %}>2º ano Ensino Médio</option>
+                                <option value="3" {% if aluno.serie_ingresso == 3 %}selected{% endif %}>3º ano Ensino Médio</option>
+                            </select>
+                        </div>
 
-    <div class="content">
-        <div class="botao">
-            <button class="botaoEstilo">Editar</button>
-            <button class="botaoEstilo">Minha Conta</button>
-        </div>
-
-        <div class="logo">
-            <img src="{%static 'img/logo.png'%}" alt="">
-        </div>
-        <div >
-            <h2 class="titulo-nome">Maria Luiza Camilo do Nascimento</h2>
-            <p class="matriculado">Matriculado</p>
-            <div class="dados-usuario">
-                
-                
-                <img src="{%static 'img/foto-usuario.png'%}" alt="" class="dados-usuario-img">
-                <div>
-                    
-                    <span>Nome:</span>
-                    <h3>Maria Luiza Camilo do Nascimento</h3>
-                    <hr>
-
-                    <span>Ingresso:</span>
-                    <h3>2024/1</h3>
-                    <hr>
-
-                    <span>Curso:</span>
-                    <h3>Administração</h3>
-                    <hr>
-
-
-                    <span>Periodo:</span>
-                    <h3>3° ano Ensino Médio</h3>
-                    <hr>
-                </div> 
+                        <div class="col-12 mt-5 d-flex justify-content-center gap-3">
+                            <button type="submit" class="btn btn-success px-5 py-2 fw-bold">Salvar Alterações</button>
+                            <button type="button" onclick="toggleEdit()" class="btn btn-outline-light px-5 py-2">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-           
         </div>
-    </div>
+   </div>
+</main>
+        
+    <script src="{% static 'js/dados-usuario.js' %}"></script>
 
-    <script src="{% static 'js/scripts.js' %}"></script>
+    
 </body>
 </html>

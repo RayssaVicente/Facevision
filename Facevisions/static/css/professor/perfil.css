@@ -1,0 +1,75 @@
+body {
+            background: radial-gradient(circle at top right, #4b5cc4, #2d328d 50%, #1a1c4d 100%); /* Gradiente da tela de login */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+            color: white;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1); /* Efeito de vidro do dashboard */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .profile-header-circle {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid #fff;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .info-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .label-text {
+            color: #a29bfe; /* Roxo claro para labels */
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .badge-turma {
+            background: #6c5ce7; /* Roxo principal */
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .btn-back {
+            background: #6c5ce7;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 30px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #a29bfe;
+            color: #2d3436;
+        }

@@ -1,0 +1,121 @@
+body {
+            /* Gradiente vibrante baseado na sua preferência */
+            background: radial-gradient(circle at top right, #4b5cc4, #2d328d 50%, #1a1c4d 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+        }
+
+        .logo {
+            width: 60px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: 0.3s;
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+        }
+
+        .form-container {
+            /* Estética Glassmorphism (Vidro) */
+            background: rgba(255, 255, 255, 0.1); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            color: white;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-avatar {
+            width: 75px;
+            height: 75px;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Inputs Modernos e Brancos */
+        .input-group {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+        }
+
+        .input-group-text {
+            background-color: white;
+            border: none;
+            color: #573bff;
+            padding-left: 15px;
+        }
+
+        .form-control {
+            border: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            background-color: white;
+        }
+
+        .btn-login {
+            background: linear-gradient(90deg, #6366f1, #573bff);
+            color: white;
+            border-radius: 15px;
+            padding: 12px;
+            font-weight: 700;
+            width: 100%;
+            border: none;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(87, 59, 255, 0.3);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(87, 59, 255, 0.4);
+            filter: brightness(1.1);
+            color: white;
+        }
+
+        .cadastro-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .cadastro-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* Modal de Erro Customizado */
+        .modal-content { border-radius: 20px; border: none; overflow: hidden; }
+        .modal-header { background-color: #4d1a1a; color: white; border: none; }

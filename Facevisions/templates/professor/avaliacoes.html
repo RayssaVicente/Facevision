@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content-header mt-5">
+    <h2><i class="bi bi-calendar-event me-2"></i>Agendar Nova Avaliação</h2>
+</div>
+<form method="POST" action="{% url 'agendar_avaliacao' %}">
+    {% csrf_token %}
+    <div class="row g-3">
+        <div class="col-md-4">
+            <label class="form-label">Nome da Avaliação</label>
+            <input type="text" name="nome_prova" class="form-control" placeholder="Ex: Prova Bimestral" required>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Data</label>
+            <input type="date" name="data_prova" class="form-control" required>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label">Turma (Série)</label>
+            <select name="turma" class="form-select" required>
+                <option value="1">1º Ano</option>
+                <option value="2">2º Ano</option>
+                <option value="3">3º Ano</option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Área do Conhecimento</label>
+            <select name="area_conhecimento" class="form-select">
+                <option value="Linguagens">Linguagens</option>
+                <option value="Exatas">Exatas</option>
+                <option value="Humanas">Humanas</option>
+                <option value="Biológicas">Biológicas</option>
+            </select>
+        </div>
+        <div class="col-md-6 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-100 btn-register" style="background-color: #27ae60;">
+                Agendar na Central do Aluno
+            </button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

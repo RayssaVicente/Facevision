@@ -1,0 +1,33 @@
+body {
+            background: linear-gradient(135deg, #2c3494 0%, #1a1f5c 100%);
+            min-height: 100vh;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px 20px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+        }
+        .table { color: white; margin-top: 20px; }
+        .table thead th { border-bottom: 2px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+        .table td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px; vertical-align: middle; }
+        .badge-nota {
+            background: #6c5ce7;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .btn-back {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50px;
+            border: none;
+            padding: 8px 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-back:hover { background: rgba(255,255,255,0.2); color: white; }
