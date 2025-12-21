@@ -1,0 +1,26 @@
+[
+    {
+        "email": "fernando@gmail.com",
+        "senha": "pbkdf2_sha256$1200000$08Lx7lCUlBqBEMRhGfeMcd$0+bAe8y75vQCNQYQh7u/RfpRhj5SghphToxmPQCvnMY="
+    },
+    {
+        "email": "rayssa@gmail.com",
+        "senha": "pbkdf2_sha256$1200000$31CacscPY9SFJhD5q1C0i0$Kb0cmuexXfQR4pavu2Kf+JQChop3Z1RLKk/gnUwXBps="
+    },
+    {
+        "email": "lua@gamil.com",
+        "senha": "pbkdf2_sha256$1200000$RvGADWzyHqih99ybQv4DtG$1Ak8ZkC16ZFaS/jzDcz4ZwVSfUsFY2jCl18G19dBbu8="
+    },
+    {
+        "email": "luiza@gmail.com",
+        "senha": "pbkdf2_sha256$1200000$RvGADWzyHqih99ybQv4DtG$1Ak8ZkC16ZFaS/jzDcz4ZwVSfUsFY2jCl18G19dBbu8="
+    },
+    {
+        "email": "julia@gmail.com",
+        "senha": "pbkdf2_sha256$1200000$OBJYZk6yTb1gOBdEWF1VQu$akisl7ZmpfmT2SwtvTlHlMsAHX7ARS+9b+JNQtcC0P4="
+    },
+    {
+        "email": "renata@gmail.com",
+        "senha": "pbkdf2_sha256$1200000$9LPfRDHHvKfh5ClzEoz6ln$Asg7b9aKN0TzC4Kavye9l9k4H6NKoUsOBBNZey2+Nt4="
+    }
+]
