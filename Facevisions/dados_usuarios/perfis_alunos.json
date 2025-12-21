@@ -1,0 +1,51 @@
+[
+    {
+        "email": "fernando@gmail.com",
+        "nome_completo": "Fernando",
+        "curso": "Administração",
+        "serie_ingresso": 2,
+        "ano_ingresso": 2025,
+        "ingresso_formatado": "2025",
+        "status": "Matriculado"
+    },
+    {
+        "email": "rayssa@gmail.com",
+        "nome_completo": "rayssa",
+        "curso": "Administração",
+        "serie_ingresso": 2,
+        "ano_ingresso": 2025,
+        "tipo": "aluno"
+    },
+    {
+        "email": "lua@gamil.com",
+        "nome_completo": "Luana ribeiro",
+        "curso": "Administração",
+        "serie_ingresso": 2,
+        "ano_ingresso": 2025,
+        "status": "Matriculado"
+    },
+    {
+        "email": "luiza@gmail.com",
+        "nome_completo": "Maria Luiza Camilo",
+        "curso": "Bar e Restaurante",
+        "serie_ingresso": 2,
+        "ano_ingresso": 2025,
+        "status": "Matriculado"
+    },
+    {
+        "email": "julia@gmail.com",
+        "nome_completo": "Julia Consalves",
+        "curso": "Administração",
+        "serie_ingresso": 3,
+        "ano_ingresso": 2025,
+        "status": "Matriculado"
+    },
+    {
+        "email": "renata@gmail.com",
+        "nome_completo": "Renata Carla da Silva",
+        "curso": "Bar e Restaurante",
+        "serie_ingresso": 2,
+        "ano_ingresso": 2025,
+        "status": "Matriculado"
+    }
+]
