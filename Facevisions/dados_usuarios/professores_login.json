@@ -1,0 +1,9 @@
+[
+    {
+        "email": "professor@escola.com",
+        "nome": "Carla de almeida",
+        "senha": "45679688R@",
+        "materia": "Português",
+        "turmas": [1, 2]
+    }
+]
