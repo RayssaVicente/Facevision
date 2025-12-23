@@ -59,10 +59,11 @@ Siga os passos para rodar o projeto localmente:
    source venv/bin/activate
    
 4. **Instale todas as depedencias necessarias:**
+   
    pip install -r requirements.txt
 
    python manage.py migrate
    python manage.py runserver
    
-5. **Acesse o servidor local**
+6. **Acesse o servidor local**
    http://127.0.0.1:8000/
