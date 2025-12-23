@@ -32,7 +32,7 @@ O projeto segue a arquitetura **MTV (Model-Template-View)** do Django:
 ## 🛠️ Tecnologias Utilizadas
 
 - **Backend:** [Python](https://www.python.org/) & [Django Framework](https://www.djangoproject.com/)
-- **Frontend:** HTML5, CSS3 e Bootstrap e JavaScript
+- **Frontend:** HTML5, CSS3, Bootstrap e JavaScript
 - **Banco de Dados:** SQLite (Desenvolvimento)
 
 ## 📺 Demonstração
