@@ -1,88 +1,68 @@
-# FaceVision
+# 📸 FaceVision
 
-Este repositório contém o código-fonte de uma aplicação web desenvolvida para automatizar o controle de frequência de alunos, substituindo métodos tradicionais e suscetíveis a falhas, como a chamada manual e o uso de listas de papel. O sistema também conta com um site onde vai ser possível colocar as notas e dados do aluno.
+O **FaceVision** é uma aplicação web robusta desenvolvida para automatizar o controle de frequência escolar. Utilizando tecnologia de reconhecimento e gestão de dados, o sistema substitui as chamadas manuais tradicionais, reduzindo falhas e auxiliando na gestão de notas e combate à evasão escolar.
 
-## Sobre o Projeto
+<p align="left">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+</p>
 
-A aplicação "FaceVision" é construída utilizando o framework web Django no backend, e tecnologias web padrão como HTML, CSS e JavaScript no frontend. O objetivo principal é ajudar os professores no registro de notas e frequência, e a gestão escolar no controle de evasão escolar.
-### Estrutura do Projeto
+## 🎯 Sobre o Projeto
 
-O projeto é organizado da seguinte forma:
+O objetivo principal é oferecer aos professores uma ferramenta centralizada para registro de avaliações e frequência, permitindo que a gestão escolar tenha uma visão clara do desempenho e presença dos alunos em tempo real.
 
-* *Facevision/*: Contém a lógica principal da aplicação web, incluindo:
-    * *models.py*: Definição dos modelos de dados (estruturas do banco de dados).
-    * *views.py*: Lógica de negócios e controle das requisições HTTP.
-    * *admin.py*: Configurações para a interface de administração do Django.
-    * *migrations/*: Arquivos de migração do banco de dados.
-* *estático/*: Armazena os arquivos estáticos da aplicação (CSS, JavaScript, Imagens):
-    * *Css/*: Estilos CSS para o design da interface.
-    * *img/*: Imagens utilizadas na aplicação (fundos, logos, fotos de usuário).
-    * *Js/*: Scripts JavaScript para interatividade no frontend.
-* *Modelos/*: Contém os arquivos HTML (templates) para as diferentes seções da aplicação:
-    * boletin/, cadastro/, dados-usuario/, Horarios/, login/, minhas-avaliacoes/, principal/: Cada pasta provavelmente representa uma página ou um módulo específico da interface do usuário.
-* *dados_usuarios/*: Possivelmente armazena dados de usuários em formato JSON.
-* *db.sqlite3*: O banco de dados SQLite utilizado para desenvolvimento.
-* *venv/*: Ambiente virtual Python para gerenciar as dependências do projeto.
-* *manage.py*: Script de linha de comando do Django para gerenciar o projeto.
+### 🚀 Principais Funcionalidades
 
-## Tecnologias Utilizadas
+- **Controle de Frequência Automatizado:** Registro inteligente de presença.
+- **Gestão de Notas:** Lançamento e acompanhamento de boletins escolares.
+- **Painel Administrativo:** Interface para controle total de usuários, turmas e horários.
+- **Módulos Específicos:** Áreas dedicadas para Minhas Avaliações, Horários e Dados do Usuário.
 
-* *Backend*: Python, Django
-* *Frontend*: HTML5, CSS3, JavaScript
+## 📂 Estrutura do Projeto
 
-## Como Configurar e Rodar o Projeto (Instruções para Desenvolvimento)
+O projeto segue a arquitetura **MTV (Model-Template-View)** do Django:
 
-Para configurar e rodar este projeto em seu ambiente local, siga os passos abaixo:
+* **Facevision/**: Core da aplicação (Models, Views e lógica de negócio).
+* **static/**: Arquivos de estilo (CSS), interatividade (JS) e recursos visuais (Img).
+* **templates/**: Estruturas HTML organizadas por módulos (Login, Cadastro, Boletim, etc).
+* **dados_usuarios/**: Armazenamento local de perfis em formato JSON.
+* **manage.py**: Script de gerenciamento do ecossistema Django.
 
-1.  *Clone o repositório:*
+## 🛠️ Tecnologias Utilizadas
 
-    bash
-    git clone [https://github.com/RayssaVicente/Visao-facial.git](https://github.com/RayssaVicente/Visao-facial.git) # Verifique o URL exato do seu repositório
-    cd FaceVision
-    
+- **Backend:** [Python](https://www.python.org/) & [Django Framework](https://www.djangoproject.com/)
+- **Frontend:** HTML5, CSS3 e Bootstrap e JavaScript
+- **Banco de Dados:** SQLite (Desenvolvimento)
 
-2.  *Crie e ative o ambiente virtual:*
+## 📺 Demonstração
 
-    bash
-    python -m venv venv
-     No Windows:
-    .\venv\Scripts\activate
-     No macOS/Linux:
-    source venv/bin/activate
-    
+https://github.com/user-attachments/assets/7aa1c6a7-875c-483e-9289-936602c0e87b
 
-3.  *Instale as dependências:*
 
-    bash
-    pip install -r requirements.txt # Você precisará criar este arquivo se ainda não existir
-    
-    * *Nota*: Se o requirements.txt não existir, você precisará criá-lo com as dependências do Django e quaisquer outras que você esteja usando (ex: pip freeze > requirements.txt após instalar tudo). Pelo menos, Django será necessário.
+## 🔧 Configuração e Instalação
 
-4.  *Execute as migrações do banco de dados:*
+Siga os passos para rodar o projeto localmente:
 
-    bash
-    python manage.py makemigrations
-    python manage.py migrate
-    
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/RayssaVicente/Facevision.git](https://github.com/RayssaVicente/Facevision.git)
+   
+   cd Facevision
 
-5.  *Crie um superusuário (opcional, para acessar o admin do Django):*
+2. **Ative o venv:**
+   python -m venv venv
+   # Windows:
+   .\venv\Scripts\activate
+   
+   # Linux/Mac:
+   source venv/bin/activate
+   
+4. **Instale todas as depedencias necessarias:**
+   pip install -r requirements.txt
 
-    bash
-    python manage.py createsuperuser
-    
-
-6.  *Inicie o servidor de desenvolvimento:*
-
-    bash
-    python manage.py runserver
-    
-
-    A aplicação estará acessível em http://127.0.0.1:8000/.
-
-## Como Usar
-
-[*Descreva aqui os passos básicos para usar a aplicação uma vez que ela esteja rodando. Por exemplo:*
-* "Acesse a página de login em /login."
-* "Navegue para a página de cadastro em /cadastro para criar uma nova conta."
-* "Explore as funcionalidades do sistema."
-]
+   python manage.py migrate
+   python manage.py runserver
+   
+5. **Acesse o servidor local**
+   http://127.0.0.1:8000/
